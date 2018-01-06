@@ -14,7 +14,7 @@ print(ord(chr(65)))
 w = (sys.argv)
 name = (w[1])
 wksn = (w[2])
-ed = 'tthale02@gmail.com'
+ed = ('Insert your email here')
 
 #wksn = ((time.strftime("%m/%d/%Y")))
 name_old = str(2872116359)
