@@ -14,7 +14,7 @@ print(ord(chr(65)))
 w = (sys.argv)
 name = (w[1])
 wksn = (w[2])
-ed = ('Insert your email here')
+ed = 'tthale02@gmail.com'
 
 #wksn = ((time.strftime("%m/%d/%Y")))
 name_old = str(2872116359)
@@ -79,7 +79,7 @@ c = 0
 c2 = 0
 line = 1
 n = 0
-l = ['cell1','cell2','cell3','cell4','cell5','cell6','cell7','cell8','cell9','cell10']
+l = ['Course_Name','Course_Date','Homework_Item','HW_Due_Date','Status','Submission','Comments','Misc','cell9','cell10']
 
 if ((wks.row_values(d)[0]) == ''):
 	for i in range(len(l)):
