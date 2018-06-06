@@ -1,7 +1,3 @@
-OAuth Credentials-09bfd868e834.json
-client_secret.json
-client_secret_web.json
-sheets.googleapis.com-python.json
-Temp
-Temp/*
-
+/.metadata/
+/config.properties
+/sheets.googleapis.com-python.json
