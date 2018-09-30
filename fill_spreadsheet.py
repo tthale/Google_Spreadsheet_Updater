@@ -7,6 +7,7 @@ import array
 import googleapiclient
 from oauth2client.service_account import ServiceAccountCredentials
 import os
+from Tkinter import *
 #test statements
 '''
 print(chr(0))
@@ -25,12 +26,7 @@ for v in range(3):
 	
 #Old version using gspread
 '''
-#wksn = ((time.strftime("%m/%d/%Y")))
-name_old = str(2872116359)
-
-#+', '+(time.strftime("%H:%M:%S")))
-
-#(str(random.getrandbits(32)))
++
 
 # use creds to create a client to interact with the Google Drive API
 scope = ['https://spreadsheets.google.com/feeds',
