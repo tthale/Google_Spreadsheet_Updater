@@ -1,3 +1,9 @@
-OAuth Credentials-09bfd868e834.json
-client_secret.json
-
+/.metadata/
+/config.properties
+/sheets.googleapis.com-python.json
+/.project
+/.pydevproject
+/RemoteSystemsTempFiles
+/client_secret.json
+/prototyping/tom.properties
+/prototyping/sheets.googleapis.com-python.json
