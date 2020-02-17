@@ -1,4 +1,4 @@
-import gspread
+# import gspread
 import pygsheets
 import random
 import sys
@@ -10,9 +10,10 @@ import os
 from Tkinter import *
 #test statements
 '''
-print(chr(0))
-print(chr(65))
-print(ord(chr(65)))
+Fill a soeadsheet's (new or existing) worksheet with a single row's worth of cells. These are provided
+as command line argumemnts separated by a space (if a cell is multi-word, then enclose each cell argument in double quotes)
+Example:
+"Spreadsheet name" "Worksheet Name" "first column info" "2nd col" "Look over 3rd col info" "4th col" " " "6th col" ...
 '''
 w = (sys.argv)
 name = (w[1])
@@ -20,6 +21,7 @@ wksn = (w[2])
 ed = os.environ['google_spreadsheet_sharing']
 sec = os.environ['secrets']
 
+# Strip off the first few args and keep just the cell data for the row to be added 
 value = w
 for v in range(3):
 	value.pop(0)
@@ -78,9 +80,13 @@ c = 0
 c2 = 0
 line = 1
 n = 0
-l = ['cell1','cell2','cell3','cell4','cell5','cell6','cell7','cell8','cell9','cell10']
+
+row_header = ['Course_Name','Course_Date','Homework_Item','HW_Due_Date','Status','Submission','Comments','Misc','cell9','cell10']
+
+
 '''
 Temporary Commenting Out
+# branch 'master' of https://github.com/tthale/Google_Spreadsheet_Updater.git
 if ((wks.row_values(d)[0]) == ''):
 	for i in range(len(l)):
 		if (n != (len(l))):
@@ -116,7 +122,7 @@ for i in range((len(w)-3)):
 
 '''
 
-#This is the new way the program determines which row to input on:
+# Skip to the last row of the worksheet:
 try:
 
 	while ((wks.get_value((d,1))) != ''):
@@ -124,6 +130,10 @@ try:
 
 except pygsheets.exceptions.CellNotFound:
 	d += 1
+except IndexError:	# Indicative of this being a new worksheet; starts at d == 1
+	if d == 1:
+		wks.insert_rows(0, number = 1, values=row_header, inherit = False)
+		d += 1
 
 #This inserts new rows in, and also could be repeated multiple times because it increases the boundaries of the worksheet itself:
 wks.insert_rows((d-1), number = 1, values=value, inherit = False)

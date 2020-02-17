@@ -4,3 +4,6 @@
 /.project
 /.pydevproject
 /RemoteSystemsTempFiles
+/client_secret.json
+/prototyping/tom.properties
+/prototyping/sheets.googleapis.com-python.json
